@@ -1,0 +1,129 @@
+{
+  "list": {
+    "searchUsers": "Search users...",
+    "actionInfo": "Right-click on a user to view actions",
+    "loadingUsers": "Loading users...",
+    "noResults": "No results",
+    "recordsPerPage": "Records per page",
+    "actions": {
+      "header": "Actions for '{{username}}'",
+      "edit": "Edit",
+      "permissions": "Permissions"
+    },
+    "dangerZone": {
+      "header": "Danger zone",
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "delete": "Delete",
+      "confirmAction": "Please confirm this action",
+      "deactivateConfirm": {
+        "message": "Are you sure you want to deactivate user <1>{{username}}</1>?",
+        "warning": "Deactivating user will log them out and restrict their access to the system."
+      },
+      "deleteConfirm": {
+        "message": "Are you sure you want to <1>delete</1> user <2>{{username}}</2>?",
+        "warning": "This action is irreversible and will <1>permanently</1> erase user data."
+      },
+      "deleteSelected": {
+        "message": "Are you sure you want to <1>delete</1> <2>{{amount}}</2> selected user(s)?",
+        "warning": "This action is irreversible and will <1>permanently</1> erase their data.",
+        "success": "Successfully deleted {{amount}} users"
+      }
+    },
+    "mobileWarning": "This page was not designed for mobile devices, some features may not work properly.",
+    "mobileWarningTitle": "Warning!",
+    "refreshUsers": "Refresh user list",
+    "createUser": "Create new user",
+    "editUser": "Edit user",
+    "deleteSelected": "Delete selected users",
+    "amountOfUsers": "Amount of users per page",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "verified": "Verified",
+      "unverified": "Unverified"
+    },
+    "columns": {
+      "user": "User",
+      "email": "Email",
+      "active": "Active",
+      "verified": "Verified",
+      "actions": "Actions"
+    },
+    "filters": {
+      "search": {
+        "username": {
+          "placeholder": "Search users..."
+        },
+        "email": {
+          "placeholder": "Search by email..."
+        }
+      },
+      "options": {
+        "placeholder": "Select filter",
+        "startsWith": "Starts with",
+        "endsWith": "Ends with",
+        "contains": "Contains",
+        "equals": "Equals",
+        "notEquals": "Not equals",
+        "caseSensitive": "Case sensitive",
+        "is_active": {
+          "true": "Only active",
+          "false": "Only inactive"
+        },
+        "is_verified": {
+          "true": "Only verified",
+          "false": "Only unverified"
+        }
+      }
+    }
+  },
+  "permissions": {
+    "title": "Permissions for '{{username}}'",
+    "subtitle": "Manage user permissions",
+    "superadminWarning": "Superadmin can perform any action in the system and cannot be restricted.",
+    "saving": "Saving permissions...",
+    "saveSuccess": "Permissions saved successfully",
+    "saveError": "Failed to save permissions",
+    "list": {
+      "superadmin": "Superadmin",
+      "songs": "Songs",
+      "users": "Users",
+      "grant": "Grant",
+      "permissions": "Permissions",
+      "create": "Create",
+      "read": "Read",
+      "edit": "Edit",
+      "delete": "Delete",
+      "access": "Access",
+      "list": "List",
+      "add": "Add",
+      "bulkAdd": "Bulk add"
+    }
+  },
+  "modal": {
+    "errors": {
+      "userDataMissing": "User data is missing",
+      "noChanges": "No changes detected"
+    },
+    "labels": {
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "isActive": "Is active?",
+      "discordID": "Discord ID",
+      "generatePassword": "Generate new password"
+    },
+    "tooltips": {
+      "discordID": "You can paste the user's discord ID here to send them their password and automatically verify them.",
+      "noPreview": "Password preview unavailable",
+      "generatePassword": "Generate password",
+      "copy": "Copy to clipboard",
+      "copied": "Copied!"
+    },
+    "warnings": {
+      "sendViaDiscord": "<1>Note:</1> The password cannot be copied or set to a custom one! When a user's password is updated, it will be sent to the user via discord.",
+      "notVerified": "User is not verified, password cannot be sent to the user!"
+    }
+  }
+}

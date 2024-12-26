@@ -1,0 +1,44 @@
+.card {
+  max-width: 275px;
+  position: relative;
+  background-color: var(--mantine-color-body);
+  user-select: none;
+
+  .imageContainer {
+    max-height: 125px;
+    overflow: hidden;
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: all 200ms ease-in-out;
+      user-select: none;
+
+      &:hover {
+        transform: scale(1.025);
+      }
+    }
+  }
+
+  .popularBadge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .bottomActions {
+    background-color: lighten(var(--mantine-color-body), 0.032);
+  }
+}
+
+.control {
+  &[data-inactive] {
+    opacity: 0;
+    cursor: default;
+  }
+}

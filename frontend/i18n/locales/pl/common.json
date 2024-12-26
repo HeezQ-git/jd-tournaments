@@ -1,0 +1,83 @@
+{
+  "redirecting": "Przekierowywanie...",
+  "checkingData": "Sprawdzanie danych...",
+  "loading": "ładowanie",
+  "error": "Błąd",
+  "success": "Sukces",
+  "description": "Opis",
+  "buttons": {
+    "cancel": "Anuluj",
+    "confirm": "Potwierdź",
+    "delete": "Usuń",
+    "save": "Zapisz",
+    "add": "Dodaj",
+    "create": "Utwórz",
+    "edit": "Edytuj",
+    "activate": "Aktywuj",
+    "deactivate": "Dezaktywuj"
+  },
+  "navigation": {
+    "goBack": "Powrót"
+  },
+  "languages": {
+    "en": "Angielski",
+    "pl": "Polski"
+  },
+  "header": {
+    "account": "Konto",
+    "login": "Zaloguj się",
+    "register": "Zarejestruj się",
+    "logout": "Wyloguj się",
+    "general": "Generalne",
+    "administration": "Administracyjne",
+    "settings": "Ustawienia",
+    "verify": "Weryfikacja konta",
+    "toggle": "Otwórz pasek boczny",
+    "navigation": "Nawigacja",
+    "language": "Język",
+    "tournament": {
+      "category": "Turnieje",
+      "list": "Lista turniejów",
+      "create": "Stwórz turniej"
+    },
+    "mode": {
+      "light": "Jasny motyw",
+      "dark": "Ciemny motyw"
+    },
+    "songs": {
+      "category": "Piosenki",
+      "list": "Lista piosenek",
+      "add": "Dodaj piosenkę",
+      "bulk": "Dodaj masowo"
+    },
+    "users": {
+      "category": "Użytkownicy",
+      "list": "Lista użytkowników",
+      "add": "Dodaj użytkownika"
+    }
+  },
+  "languageChanged": {
+    "title": "Zmieniono język",
+    "message": "Aby zastosować zmiany, odśwież stronę.",
+    "action": "Odśwież teraz"
+  },
+  "errors": {
+    "unknown": "Wystąpił nieznany błąd",
+    "user": {
+      "idRequired": "Wymagane jest ID użytkownika"
+    },
+    "permission": {
+      "title": "Brak uprawnień",
+      "description": "Nie masz uprawnień do odczytu żądanych danych.",
+      "insufficient": "Niewystarczające uprawnienia"
+    }
+  },
+  "notFound": {
+    "title": "Ups! Strona, której szukasz, nie istnieje.",
+    "description": "Sprawdź, czy adres URL jest poprawny lub wrócić na stronę główną."
+  },
+  "noAccess": {
+    "title": "Nie masz dostępu do tej strony",
+    "description": "Skontaktuj się z administratorem, jeśli uważasz, że to błąd."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["airbnb", "airbnb/hooks", "next/core-web-vitals", "prettier", "plugin:import/typescript"],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", "d.ts"],
+        "moduleDirectory": ["node_modules", "./"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ],
+  "rules":  {
+    "prettier/prettier": ["error", {
+      "endOfLine": "auto"
+    }, { "usePrettierrc": true }],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ],
+    "linebreak-style": 0,
+    "no-shadow": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "consistent-return": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "no-param-reassign": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "off",
+    "max-len": ["error", { "code": 120 }],
+    "operator-linebreak": "off",
+    "react/function-component-definition": "off",
+    "no-nested-ternary": "off"
+  },
+  "plugins": ["prettier"]
+}

@@ -1,0 +1,129 @@
+{
+  "list": {
+    "searchUsers": "Szukaj użytkowników...",
+    "actionInfo": "Kliknij prawym przyciskiem na użytkownika, aby zobaczyć akcje",
+    "loadingUsers": "Ładowanie użytkowników...",
+    "noResults": "Brak wyników",
+    "recordsPerPage": "Rekordów na stronę",
+    "actions": {
+      "header": "Akcje dla '{{username}}'",
+      "edit": "Edytuj",
+      "permissions": "Uprawnienia"
+    },
+    "dangerZone": {
+      "header": "Strefa zagrożenia",
+      "activate": "Aktywuj",
+      "deactivate": "Dezaktywuj",
+      "delete": "Usuń",
+      "confirmAction": "Proszę potwierdzić tę akcję",
+      "deactivateConfirm": {
+        "message": "Czy na pewno chcesz dezaktywować użytkownika <1>{{username}}</1>?",
+        "warning": "Dezaktywacja użytkownika spowoduje jego wylogowanie i ograniczenie dostępu do systemu."
+      },
+      "deleteConfirm": {
+        "message": "Czy na pewno chcesz <1>usunąć</1> użytkownika <2>{{username}}</2>?",
+        "warning": "Ta akcja jest nieodwracalna i <1>trwale</1> usunie dane użytkownika."
+      },
+      "deleteSelected": {
+        "message": "Czy na pewno chcesz <1>usunąć</1> <2>{{amount}}</2> wybranych użytkowników?",
+        "warning": "Ta akcja jest nieodwracalna i <1>trwale</1> usunie ich dane.",
+        "success": "Pomyślnie usunięto {{amount}} użytkowników"
+      }
+    },
+    "mobileWarning": "Ta strona nie została zaprojektowana dla urządzeń mobilnych, niektóre funkcje mogą nie działać poprawnie.",
+    "mobileWarningTitle": "Uwaga!",
+    "refreshUsers": "Odśwież listę użytkowników",
+    "createUser": "Utwórz nowego użytkownika",
+    "editUser": "Edytuj użytkownika",
+    "deleteSelected": "Usuń wybranych użytkowników",
+    "amountOfUsers": "Ilość użytkowników na stronie",
+    "columns": {
+      "user": "Użytkownik",
+      "email": "E-mail",
+      "active": "Aktywny",
+      "verified": "Zweryfikowany",
+      "actions": "Akcje"
+    },
+    "status": {
+      "active": "Aktywny",
+      "inactive": "Nieaktywny",
+      "verified": "Zweryfikowany",
+      "unverified": "Niezweryfikowany"
+    },
+    "filters": {
+      "search": {
+        "username": {
+          "placeholder": "Szukaj użytkowników..."
+        },
+        "email": {
+          "placeholder": "Szukaj po e-mailu..."
+        }
+      },
+      "options": {
+        "placeholder": "Wybierz filtr",
+        "startsWith": "Zaczyna się od",
+        "endsWith": "Kończy się na",
+        "contains": "Zawiera",
+        "equals": "Równa się",
+        "notEquals": "Nie równa się",
+        "caseSensitive": "Z uwzględnieniem wielkości liter",
+        "is_active": {
+          "true": "Tylko aktywni",
+          "false": "Tylko nieaktywni"
+        },
+        "is_verified": {
+          "true": "Tylko zweryfikowani",
+          "false": "Tylko niezweryfikowani"
+        }
+      }
+    }
+  },
+  "permissions": {
+    "title": "Uprawnienia dla '{{username}}'",
+    "subtitle": "Zarządzaj uprawnieniami użytkownika",
+    "superadminWarning": "Superadmin może wykonywać dowolne czynności w systemie i nie może być ograniczony.",
+    "saving": "Zapisywanie uprawnień...",
+    "saveSuccess": "Uprawnienia zapisane pomyślnie",
+    "saveError": "Nie udało się zapisać uprawnień",
+    "list": {
+      "superadmin": "Superadmin",
+      "songs": "Piosenki",
+      "users": "Użytkownicy",
+      "grant": "Nadaj uprawnienia",
+      "permissions": "Uprawnienia",
+      "create": "Utwórz",
+      "read": "Odczytaj",
+      "edit": "Edytuj",
+      "delete": "Usuń",
+      "access": "Dostęp",
+      "list": "Lista",
+      "add": "Dodawanie",
+      "bulkAdd": "Dodawanie masowe"
+    }
+  },
+  "modal": {
+    "errors": {
+      "userDataMissing": "Brak danych użytkownika",
+      "noChanges": "Nie wykryto zmian"
+    },
+    "labels": {
+      "username": "Nazwa użytkownika",
+      "email": "E-mail",
+      "password": "Hasło",
+      "isActive": "Jest aktywny?",
+      "discordID": "ID Discord",
+      "generatePassword": "Wygeneruj nowe hasło"
+    },
+    "tooltips": {
+      "discordID": "Możesz wkleić tutaj ID discord użytkownika, aby wysłać mu hasło i automatycznie go zweryfikować.",
+      "noPreview": "Podgląd hasła niedostępny",
+      "generatePassword": "Wygeneruj hasło",
+      "copy": "Kopiuj do schowka",
+      "copied": "Skopiowano!"
+    },
+    "warnings": {
+      "sendViaDiscord": "<1>Uwaga:</1> Hasła nie można skopiować ani ustawić na własne! Gdy hasło użytkownika zostanie zaktualizowane, zostanie ono wysłane do niego przez discord.",
+      "notVerified": "Użytkownik nie jest zweryfikowany. Nie można wysłać hasła przez discord."
+    }
+  }
+}

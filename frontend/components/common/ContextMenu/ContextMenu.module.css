@@ -1,0 +1,37 @@
+.button {
+  @mixin light {
+    &:hover {
+      background-color: var(--mantine-color-gray-1);
+    }
+  }
+}
+
+.container {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    background-color: light-dark(
+      var(--mantine-color-white),
+      var(--mantine-color-dark-6)
+    );
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -1px;
+    width: 8.5px;
+    height: 8.5px;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    background-color: var(--mantine-color-dark-4);
+
+    /* box-sizing: border-box;
+    border: 1px solid var(--mantine-color-dark-4); */
+  }
+}

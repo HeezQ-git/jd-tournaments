@@ -1,0 +1,44 @@
+.recurrence {
+  position: relative;
+
+  .badge {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+  }
+}
+
+.overlappingRecurrence {
+  border: 1px solid alpha(var(--mantine-color-red-6), 0.5);
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  border: rem(1px) solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-8));
+  border-radius: var(--mantine-radius-sm);
+  padding-inline: var(--mantine-spacing-lg);
+  padding-block: var(--mantine-spacing-md);
+  background-color: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-8)
+  );
+  border: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-5));
+  transition: all 100ms ease;
+
+  @mixin hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-0),
+      lighten(var(--mantine-color-dark-8), 0.02)
+    );
+  }
+}
+
+.accordionItem {
+  transition: border-color 200ms ease;
+}
+.activeItem {
+  border-color: alpha(var(--mantine-color-teal-6), 0.4) !important;
+}

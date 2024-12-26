@@ -1,0 +1,106 @@
+{
+  "addSong": "Dodaj piosenkę",
+  "editSong": "Edytuj piosenkę",
+  "bulkAdd": "Dodaj masowo",
+  "nothingFound": "Nic nie znaleziono",
+  "select": "Wybierz",
+  "create": "Utwórz",
+  "search": "Szukaj wartości",
+  "page": "Strona",
+  "song": {
+    "title": "Tytuł",
+    "artists": "Wykonawcy",
+    "tags": "Tagi",
+    "releaseYear": "Rok wydania",
+    "mode": "Tryb",
+    "difficulty": "Trudność",
+    "effort": "Wysiłek",
+    "game": "Gra",
+    "exclusivity": "Ekskluzywność",
+    "version": "Wersja",
+    "jdpRequired": "JD+ wymagane",
+    "cameraSupport": "Wsparcie kamery",
+    "save": "Zapisz",
+    "placeholder": {
+      "artists": "wykonawców",
+      "tags": "tagi"
+    }
+  },
+  "deleteImage": {
+    "button": "Usuń obraz",
+    "title": "Potwierdź usunięcie",
+    "message": "Czy na pewno chcesz usunąć ten obraz?",
+    "cancel": "Anuluj",
+    "delete": "Usuń",
+    "deleting": "Usuwanie obrazu",
+    "wait": "Proszę czekać...",
+    "success": "Sukces",
+    "successMsg": "Obraz został pomyślnie usunięty",
+    "error": "Błąd",
+    "errorMsg": "Nie udało się usunąć obrazu"
+  },
+  "dropzone": {
+    "instructions": "Upuść pliki tutaj lub kliknij, aby przesłać",
+    "maxSize": "(Maksymalny rozmiar: 2MB)",
+    "currentlyUploaded": "Obecnie przesłany obraz",
+    "errors": {
+      "fileSize": "Plik przekracza limit 2MB",
+      "fileType": "Niedozwolony typ pliku"
+    }
+  },
+  "bulk": {
+    "fieldRequired": "To pole jest wymagane",
+    "title": "Dodaj masowo piosenki",
+    "format": "Format",
+    "formatExample": "Tytuł;;Wykonawcy;;Rok wydania;;Tryb;;Trudność;;Wysiłek;;Gra",
+    "formatNote": "Muszi być 7 pól (wymienionych powyżej), wykonawcy powinni być oddzieleni przez {{separator}}",
+    "placeholder": "Wklej piosenki tutaj",
+    "listSeparator": "Separator listy",
+    "skipDuplicates": "Pomiń duplikaty",
+    "addSongs": "Dodaj piosenki",
+    "tooFewCols": "Za mało kolumn",
+    "tooManyCols": "Za dużo kolumn",
+    "skippedDuplicates": "Pominięto {{count}} duplikat(ów)",
+    "noSongsToAdd": "Nie ma już piosenek do dodania.",
+    "addingSongs": "Dodawanie {{count}} piosenki(ek)...",
+    "addingSong": "[{{count}}/{{total}}] Dodawanie piosenki: {{title}}",
+    "failedToAdd": "Nie udało się dodać: {{title}}",
+    "songsAdded": "Piosenki dodane pomyślnie",
+    "finishedWithErrors": "Zakończono dodawanie piosenek z błędami"
+  },
+  "list": {
+    "noSongs": "Nie znaleziono piosenek",
+    "title": "Lista piosenek",
+    "addSong": "Dodaj piosenkę",
+    "searchPlaceholder": "Szukaj piosenek...",
+    "failedDelete": "Nie udało się usunąć piosenki",
+    "successDelete": "Piosenka została pomyślnie usunięta",
+    "confirmDelete": "Potwierdź usunięcie <1>{{title}}</1>",
+    "buttons": {
+      "delete": "Usuń",
+      "edit": "Edytuj",
+      "confirm": "Potwierdź"
+    }
+  },
+  "form": {
+    "createSuccess": "Pomyślnie utworzono piosenkę",
+    "createFailed": "Nie udało się utworzyć piosenki",
+    "noData": "Dane piosenki nie zostały przekazane poprawnie",
+    "noChanges": "Nie wykryto zmian",
+    "updating": "Aktualizowanie piosenki",
+    "wait": "Proszę czekać...",
+    "updateSuccess": "Piosenka została pomyślnie zaktualizowana",
+    "updateFailed": "Nie udało się zaktualizować piosenki",
+    "uploadingImage": "Przesyłanie obrazu",
+    "imageUploadSuccess": "Obraz został pomyślnie przesłany",
+    "imageUploadFailed": "Nie udało się przesłać obrazu"
+  },
+  "validation": {
+    "releaseYear.Req": "To jeszcze nie zostało wydane, co?",
+    "releaseYear.Min": "To zbyt stare, nie sądzisz?",
+    "title.Req": "Bez tytułu, nieznane... to piosenka czy opowieść o duchach? 👻",
+    "artists.Req": "Kto jest artystą? Piosenka sama się nie zaśpiewa!",
+    "game.Req": "Z jakiej gry pochodzi? To nie jest tajemnica, prawda?",
+    "provide": "Proszę podać wartość"
+  }
+}

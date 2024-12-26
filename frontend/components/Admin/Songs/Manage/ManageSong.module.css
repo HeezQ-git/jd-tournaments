@@ -1,0 +1,8 @@
+.option {
+  &:hover {
+    background: light-dark(
+      var(--mantine-color-gray-4),
+      var(--mantine-color-dark-6)
+    );
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "JDT": "JDT",
+  "song": {
+    "list": "Browsing songs",
+    "add": "Adding a new song",
+    "bulkAdd": "Bulk adding songs",
+    "edit": "Editing a song"
+  },
+  "user": {
+    "list": "Browsing users",
+    "permissions": "Setting user permissions"
+  },
+  "auth": {
+    "auth": "Authentication",
+    "finalize": "Finalizing authentication",
+    "error": "Authentication error",
+    "logout": "Logging out",
+    "verification": "Account verification"
+  },
+  "tournament": {
+    "list": "Browsing tournaments"
+  },
+  "notFound": "Page not found"
+}

@@ -1,0 +1,106 @@
+{
+  "addSong": "Add song",
+  "editSong": "Edit song",
+  "bulkAdd": "Bulk add",
+  "nothingFound": "Nothing found",
+  "select": "Select",
+  "create": "Create",
+  "search": "Search value",
+  "page": "Page",
+  "song": {
+    "title": "Title",
+    "artists": "Artists",
+    "tags": "Tags",
+    "releaseYear": "Release year",
+    "mode": "Mode",
+    "difficulty": "Difficulty",
+    "effort": "Effort",
+    "game": "Game",
+    "exclusivity": "Exclusivity",
+    "version": "Version",
+    "jdpRequired": "JD+ required",
+    "cameraSupport": "Camera support",
+    "save": "Save",
+    "placeholder": {
+      "artists": "artists",
+      "tags": "tags"
+    }
+  },
+  "deleteImage": {
+    "button": "Delete image",
+    "title": "Confirm deletion",
+    "message": "Are you sure you want to delete this image?",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting image...",
+    "wait": "Please wait...",
+    "success": "Success",
+    "successMsg": "Image deleted successfully",
+    "error": "Error",
+    "errorMsg": "Failed to delete image"
+  },
+  "dropzone": {
+    "instructions": "Drop files here or click to upload",
+    "maxSize": "(Max size: 2MB)",
+    "currentlyUploaded": "Currently uploaded image",
+    "errors": {
+      "fileSize": "File exceeds 2MB limit",
+      "fileType": "File type not allowed"
+    }
+  },
+  "bulk": {
+    "fieldRequired": "This field is required",
+    "title": "Bulk add songs",
+    "format": "Format",
+    "formatExample": "Title;;Artists;;Release year;;Mode;;Difficulty;;Effort;;Game",
+    "formatNote": "There must be 7 fields (listed above), artists should be separated by {{separator}}",
+    "placeholder": "Paste songs here",
+    "listSeparator": "List separator",
+    "skipDuplicates": "Skip duplicates",
+    "addSongs": "Add songs",
+    "tooFewCols": "Too few columns",
+    "tooManyCols": "Too many columns",
+    "skippedDuplicates": "{{count}} duplicate(s) skipped",
+    "noSongsToAdd": "No songs left to add.",
+    "addingSongs": "Adding {{count}} song(s)...",
+    "addingSong": "[{{count}}/{{total}}] Adding song: {{title}}",
+    "failedToAdd": "Failed to add: {{title}}",
+    "songsAdded": "Songs added successfully",
+    "finishedWithErrors": "Finished adding songs with some errors"
+  },
+  "list": {
+    "noSongs": "No songs found",
+    "title": "Song list",
+    "addSong": "Add song",
+    "searchPlaceholder": "Search songs...",
+    "failedDelete": "Failed to delete song",
+    "successDelete": "Song deleted successfully",
+    "confirmDelete": "Confirm deletion of <1>{{title}}</1>",
+    "buttons": {
+      "delete": "Delete",
+      "edit": "Edit",
+      "confirm": "Confirm"
+    }
+  },
+  "form": {
+    "createSuccess": "Song created successfully",
+    "createFailed": "Failed to create song",
+    "noData": "Song data was not provided",
+    "noChanges": "No changes detected",
+    "updating": "Updating song...",
+    "wait": "Please wait...",
+    "updateSuccess": "Song updated successfully",
+    "updateFailed": "Failed to update song",
+    "uploadingImage": "Uploading image...",
+    "imageUploadSuccess": "Image uploaded successfully",
+    "imageUploadFailed": "Failed to upload image"
+  },
+  "validation": {
+    "releaseYear.Req": "It hasn't been released yet, huh?",
+    "releaseYear.Min": "It's too old, isn't it?",
+    "title.Req": "Untitled, unknown… is this a song or a ghost story? 👻",
+    "artists.Req": "Who's the artist? The song can't sing itself!",
+    "game.Req": "Which game is it from? It's not a secret, is it?",
+    "provide": "Please provide a value"
+  }
+}

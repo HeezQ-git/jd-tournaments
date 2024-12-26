@@ -1,0 +1,12 @@
+.row {
+  &:hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-0),
+      lighten(var(--mantine-color-dark-8), 0.05)
+    );
+  }
+}
+
+.rowSelected {
+  background-color: alpha(var(--mantine-color-teal-light), 0.5) !important;
+}

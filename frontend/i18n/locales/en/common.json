@@ -1,0 +1,83 @@
+{
+  "redirecting": "Redirecting...",
+  "checkingData": "Checking data...",
+  "loading": "loading",
+  "error": "Error",
+  "success": "Success",
+  "description": "Description",
+  "buttons": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "save": "Save",
+    "add": "Add",
+    "create": "Create",
+    "edit": "Edit",
+    "activate": "Activate",
+    "deactivate": "Deactivate"
+  },
+  "navigation": {
+    "goBack": "Go back"
+  },
+  "languages": {
+    "en": "English",
+    "pl": "Polish"
+  },
+  "header": {
+    "account": "Account",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "general": "General",
+    "administration": "Administration",
+    "settings": "Settings",
+    "verify": "Account verification",
+    "toggle": "Open sidebar",
+    "navigation": "Navigation",
+    "language": "Language",
+    "tournament": {
+      "category": "Tournaments",
+      "list": "Tournament list",
+      "create": "Create tournament"
+    },
+    "mode": {
+      "light": "Light mode",
+      "dark": "Dark mode"
+    },
+    "songs": {
+      "category": "Songs",
+      "list": "Song list",
+      "add": "Add song",
+      "bulk": "Bulk add"
+    },
+    "users": {
+      "list": "User list"
+    }
+  },
+  "languageChanged": {
+    "title": "Language changed",
+    "message": "Please refresh the page to apply the changes.",
+    "action": "Refresh now"
+  },
+  "errors": {
+    "unknown": "An unknown error occurred",
+    "user": {
+      "idRequired": "User ID is required"
+    },
+    "permission": {
+      "title": "Permission denied",
+      "description": "You do not have permission to access this data.",
+      "insufficient": "Insufficient permissions",
+      "permsNotFound": "Couldn't retrieve permissions",
+      "userNotFound": "Couldn't retrieve user data"
+    }
+  },
+  "notFound": {
+    "title": "Oops! The page you are looking for does not exist.",
+    "description": "Please check the URL or go back to the homepage."
+  },
+  "noAccess": {
+    "title": "You do not have access to this page",
+    "description": "Please contact the administrator if you think this is a mistake."
+  }
+}

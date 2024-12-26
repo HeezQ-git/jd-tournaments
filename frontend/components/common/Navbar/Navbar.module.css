@@ -1,0 +1,55 @@
+.navbar {
+  background: var(--mantine-color-dark-8);
+
+  @mixin light {
+    background: var(--mantine-color-white);
+  }
+}
+
+.user {
+  display: block;
+  width: 100%;
+  padding: var(--mantine-spacing-sm) var(--mantine-spacing-md);
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-dark-0));
+  transition: background-color 100ms ease;
+
+  @mixin hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-1),
+      var(--mantine-color-dark-9)
+    );
+  }
+}
+
+.control {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--mantine-spacing-sm) var(--mantine-spacing-md);
+  transition: background-color 150ms ease;
+
+  &[data-expanded] {
+    background-color: light-dark(
+      var(--mantine-color-gray-0),
+      var(--mantine-color-dark-5)
+    );
+  }
+
+  @mixin hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-1),
+      var(--mantine-color-dark-9)
+    );
+  }
+}
+
+.selected {
+  background-color: alpha(var(--mantine-color-teal-5), 0.15);
+  color: var(--mantine-color-teal-6);
+}
+
+.label {
+  font-weight: 500;
+  font-size: var(--mantine-font-size-sm);
+}

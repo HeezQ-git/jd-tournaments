@@ -1,0 +1,24 @@
+{
+  "JDT": "JDT",
+  "song": {
+    "list": "Przeglądanie piosenek",
+    "add": "Dodawanie nowej piosenki",
+    "bulkAdd": "Masowe dodawanie piosenek",
+    "edit": "Edytowanie piosenki"
+  },
+  "user": {
+    "list": "Przeglądanie użytkowników",
+    "permissions": "Ustawianie uprawnień użytkownika"
+  },
+  "auth": {
+    "auth": "Autoryzacja",
+    "finalize": "Finalizowanie autoryzacji",
+    "error": "Błąd autoryzacji",
+    "logout": "Wylogowywanie",
+    "verification": "Weryfikacja konta"
+  },
+  "tournament": {
+    "list": "Przeglądanie turniejów"
+  },
+  "notFound": "Strona nie znaleziona"
+}
