@@ -20,6 +20,7 @@
     "version": "Wersja",
     "jdpRequired": "JD+ wymagane",
     "cameraSupport": "Wsparcie kamery",
+    "duration": "Czas trwania",
     "save": "Zapisz",
     "placeholder": {
       "artists": "wykonawców",
@@ -98,6 +99,7 @@
   "validation": {
     "releaseYear.Req": "To jeszcze nie zostało wydane, co?",
     "releaseYear.Min": "To zbyt stare, nie sądzisz?",
+    "duration": "Użyj formatu MM:SS, np. 03:45 lub 1:23",
     "title.Req": "Bez tytułu, nieznane... to piosenka czy opowieść o duchach? 👻",
     "artists.Req": "Kto jest artystą? Piosenka sama się nie zaśpiewa!",
     "game.Req": "Z jakiej gry pochodzi? To nie jest tajemnica, prawda?",

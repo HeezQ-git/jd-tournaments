@@ -4,6 +4,7 @@ import {
   forEach,
   isArray,
   isEqual,
+  split,
   startsWith,
   toPairs,
   toString,
@@ -43,6 +44,11 @@ export const onManageSongSubmit =
 
     forEach(toPairs(values), ([key, value]) => {
       if (key === 'image_path' || value === undefined) return;
+      if (key === 'duration' && !!value) {
+        const [minutes, seconds] = split(value as string, ':');
+        value = +minutes * 60 + +seconds;
+        if (Number.isNaN(value as number)) value = 0;
+      }
 
       let newValue = value;
       if (isArray(value)) newValue = formatToPostgresArray(value);

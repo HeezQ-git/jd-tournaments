@@ -1,35 +1,19 @@
-'use client';
-
 import React, { useMemo } from 'react';
-import { Flex, Text, Burger, Group, rem } from '@mantine/core';
-import { useDisclosure, useWindowScroll } from '@mantine/hooks';
+import { Flex, Text, Burger, rem, AppShell } from '@mantine/core';
 import ROUTES from '@/utils/routes';
 import Image from 'next/image';
 import Link from 'next/link';
-import clsx from 'clsx';
-import { UserMetadata } from '@supabase/supabase-js';
-import { useUserStore } from '@/stores/userStore';
+import { useGlobalStore } from '@/stores/globalStore';
 import styles from './Header.module.css';
-import NavigationDrawer from './NavigationDrawer/NavigationDrawer';
-import UserMenu from './UserMenu';
+import ToggleThemeButton from './ToggleThemeButton';
 
-interface HeaderProps {
-  lng: string;
-  initialMetadata?: UserMetadata;
-  initialIsVerified?: boolean | null;
-}
-
-function Header({ lng, initialMetadata, initialIsVerified }: HeaderProps) {
-  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
-    useDisclosure(false);
-
-  const { userMetadata: currentMetadata, isVerified: currentIsVerified } =
-    useUserStore();
-
-  const userMetadata = currentMetadata || initialMetadata;
-  const isVerified = currentIsVerified || initialIsVerified;
-
-  const [scroll] = useWindowScroll();
+const Header = () => {
+  const {
+    navbarMobileOpened,
+    setNavbarMobileOpened,
+    navbarDesktopOpened,
+    setNavbarDesktopOpened,
+  } = useGlobalStore();
 
   const Logo = useMemo(
     () => (
@@ -42,49 +26,47 @@ function Header({ lng, initialMetadata, initialIsVerified }: HeaderProps) {
             alt="logo"
             priority
           />
-          <Text fw="normal" h="max-content" lh="xs" fz={rem(20)} span>
-            JDT
-          </Text>
+          <Flex direction="column" gap="0">
+            <Text span h="max-content" c="dimmed" fw="bolder" lh="1.2">
+              <Text fz={rem(11)} fw={600} lh="inherit">
+                JUST DANCE
+              </Text>
+              <Text fz={rem(14)} fw="inherit" lh="inherit">
+                TOURNAMENTS
+              </Text>
+            </Text>
+          </Flex>
         </Flex>
       </Link>
     ),
     [],
   );
 
-  const UserMenuElement = useMemo(
-    () => <UserMenu userMetadata={userMetadata} lng={lng} />,
-    [userMetadata, lng],
-  );
-
-  const NavigationDrawerElement = useMemo(
-    () => (
-      <NavigationDrawer
-        opened={drawerOpened}
-        closeDrawer={closeDrawer}
-        userMetadata={userMetadata}
-        isVerified={isVerified}
-        lng={lng}
-      />
-    ),
-    [drawerOpened, closeDrawer, userMetadata, isVerified, lng],
-  );
-
   return (
-    <>
-      <header
-        className={clsx(styles.header, scroll.y > 0 && styles.headerGlass)}
-      >
+    <AppShell.Header
+      // className={clsx(styles.header, scroll.y > 0 && styles.headerGlass)}
+      className={styles.header}
+    >
+      <Flex align="center" gap="md">
+        <Burger
+          opened={navbarMobileOpened}
+          onClick={() => setNavbarMobileOpened(!navbarMobileOpened)}
+          hiddenFrom="sm"
+          size="sm"
+        />
+        <Burger
+          opened={navbarDesktopOpened}
+          onClick={() => setNavbarDesktopOpened(!navbarDesktopOpened)}
+          visibleFrom="sm"
+          size="sm"
+        />
         <Flex gap="sm" align="center">
           {Logo}
         </Flex>
-        <Group gap="sm">
-          {UserMenuElement}
-          <Burger size="sm" onClick={toggleDrawer} opened={drawerOpened} />
-        </Group>
-      </header>
-      {NavigationDrawerElement}
-    </>
+      </Flex>
+      <ToggleThemeButton />
+    </AppShell.Header>
   );
-}
+};
 
 export default Header;

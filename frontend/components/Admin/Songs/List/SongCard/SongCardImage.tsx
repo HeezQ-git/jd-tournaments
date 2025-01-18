@@ -15,8 +15,8 @@ const SongCardImage = ({
   style,
   noteSize,
 }: {
-  imagePath: string | null;
-  title: string;
+  imagePath?: string | null;
+  title?: string;
   isCard?: boolean;
   containerHeight?: number;
   style?: React.CSSProperties;
@@ -43,7 +43,7 @@ const SongCardImage = ({
                 width: 200,
                 quality: 70,
               })}
-              alt={title}
+              alt={title || 'Song image'}
               width={
                 (style?.width
                   ? ((style.width as number) || 0) + 25

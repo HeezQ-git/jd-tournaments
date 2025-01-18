@@ -99,9 +99,11 @@ export async function updateSession(request: NextRequest) {
     ) &&
     !request.nextUrl.pathname.startsWith('/_next')
   ) {
-    return NextResponse.redirect(
-      new URL(`/${lng}${request.nextUrl.pathname}`, request.url),
-    );
+    const query = request.nextUrl.searchParams;
+    let pathname = `/${lng}${request.nextUrl.pathname}`;
+    if (query.toString()) pathname += `?${query.toString()}`;
+
+    return NextResponse.redirect(new URL(pathname, request.url));
   }
 
   if (request.headers.has('referer')) {

@@ -58,6 +58,7 @@ const ManageSong = ({ action, id, lng }: ManageSongProps) => {
     initialValues: {
       title: '',
       artists: [] as string[],
+      duration: '',
       release_year: 0,
       mode: Mode.Solo,
       difficulty: Difficulty.Easy,
@@ -74,8 +75,12 @@ const ManageSong = ({ action, id, lng }: ManageSongProps) => {
   });
 
   useEffect(() => {
-    if (song) {
-      form.setValues(song);
+    if (song) form.setValues({ ...song, duration: '' });
+    if (song?.duration) {
+      let minutes: number | string = Math.floor(song.duration / 60);
+      minutes = minutes < 10 ? `0${minutes}` : minutes;
+      const seconds = song.duration % 60;
+      form.setFieldValue('duration', `${minutes}:${seconds}`);
     }
   }, [song]);
 

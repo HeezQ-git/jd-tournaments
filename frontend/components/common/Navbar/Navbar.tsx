@@ -1,6 +1,6 @@
 import { AppShell, ScrollArea } from '@mantine/core';
 import React from 'react';
-import { UserMetadata } from '@supabase/supabase-js';
+import { User, UserMetadata } from '@supabase/supabase-js';
 import NavbarNavigation from './NavbarNavigation';
 import styles from './Navbar.module.css';
 import NavbarUserButton from './NavbarUserButton';

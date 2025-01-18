@@ -68,6 +68,7 @@ async function RootLayout({ children, params: { lng } }: RootLayoutProps) {
     <DatesWrapper lng={lng}>
       <ZustandProvider
         initialUserMetadata={userMetadata}
+        initialUserData={user}
         initialIsVerified={isVerified}
         initialPermissions={permissions}
       >

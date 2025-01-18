@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { UserMetadata } from '@supabase/supabase-js';
+import { User, UserMetadata } from '@supabase/supabase-js';
 import { updateVerification } from '@/utils/storeFunctions';
 import { useUserStore } from '@/stores/userStore';
 import supabase from '@/utils/supabase/supabaseClient';
@@ -13,6 +13,7 @@ import { map } from 'lodash';
 interface UserDataProviderProps {
   children: React.ReactNode;
   initialUserMetadata?: UserMetadata;
+  initialUserData?: User | null;
   initialIsVerified?: boolean | null;
   initialPermissions?: string[] | null;
 }
@@ -20,17 +21,25 @@ interface UserDataProviderProps {
 const UserDataProvider: React.FC<UserDataProviderProps> = ({
   children,
   initialUserMetadata,
+  initialUserData,
   initialIsVerified,
   initialPermissions,
 }) => {
   const router = useRouter();
-  const { setUserMetadata, setIsVerified, setPermissions } = useUserStore();
+  const { setUserMetadata, setUserData, setIsVerified, setPermissions } =
+    useUserStore();
 
   useEffect(() => {
     setUserMetadata(initialUserMetadata);
+    setUserData(initialUserData);
     setIsVerified(initialIsVerified);
     setPermissions(initialPermissions);
-  }, [initialUserMetadata, initialIsVerified, initialPermissions]);
+  }, [
+    initialUserMetadata,
+    initialUserData,
+    initialIsVerified,
+    initialPermissions,
+  ]);
 
   useEffect(() => {
     const { data } = supabase().auth.onAuthStateChange(
@@ -39,6 +48,7 @@ const UserDataProvider: React.FC<UserDataProviderProps> = ({
         switch (event) {
           case 'USER_UPDATED':
           case 'SIGNED_IN':
+            setUserData(session?.user);
             setUserMetadata(session?.user?.user_metadata);
             updateVerification(
               setIsVerified,
@@ -48,6 +58,7 @@ const UserDataProvider: React.FC<UserDataProviderProps> = ({
             setPermissions(map(perms?.data, 'permissions.name'));
             break;
           case 'SIGNED_OUT':
+            setUserData(null);
             setUserMetadata({});
             setIsVerified(null);
             setPermissions(null);

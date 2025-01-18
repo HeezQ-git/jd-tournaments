@@ -18,7 +18,10 @@
     "verification": "Account verification"
   },
   "tournament": {
-    "list": "Browsing tournaments"
+    "list": "Browsing tournaments",
+    "create": "Creating a new tournament",
+    "manage": "Managing a tournament",
+    "created": "My tournaments"
   },
   "notFound": "Page not found"
 }

@@ -2,14 +2,11 @@
 
 import React, { useMemo } from 'react';
 import { usePathname } from 'next/navigation';
-import { UserMetadata } from '@supabase/supabase-js';
+import { User, UserMetadata } from '@supabase/supabase-js';
 import { useTranslation } from '@/i18n/client';
 
-import { languages } from '@/i18n/settings';
 import { navigationData } from '@/utils/navigationData';
 import { useUserStore } from '@/stores/userStore';
-import { useGlobalStore } from '@/stores/globalStore';
-import { Text } from '@mantine/core';
 import NavigationItem from './NavbarNavigationItem';
 
 interface NavbarNavigationProps {

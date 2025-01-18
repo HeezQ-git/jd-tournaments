@@ -20,6 +20,7 @@
     "version": "Version",
     "jdpRequired": "JD+ required",
     "cameraSupport": "Camera support",
+    "duration": "Duration",
     "save": "Save",
     "placeholder": {
       "artists": "artists",
@@ -98,6 +99,7 @@
   "validation": {
     "releaseYear.Req": "It hasn't been released yet, huh?",
     "releaseYear.Min": "It's too old, isn't it?",
+    "duration": "Use the format MM:SS, e.g. 03:45 or 1:23",
     "title.Req": "Untitled, unknown… is this a song or a ghost story? 👻",
     "artists.Req": "Who's the artist? The song can't sing itself!",
     "game.Req": "Which game is it from? It's not a secret, is it?",

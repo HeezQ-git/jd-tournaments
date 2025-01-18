@@ -38,7 +38,8 @@
     "tournament": {
       "category": "Turnieje",
       "list": "Lista turniejów",
-      "create": "Stwórz turniej"
+      "create": "Stwórz turniej",
+      "created": "Moje turnieje"
     },
     "mode": {
       "light": "Jasny motyw",

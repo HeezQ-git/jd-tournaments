@@ -1,5 +1,37 @@
 import { supabaseService } from '@/utils/supabase/supabaseService';
+import { map } from 'lodash';
 import { NextRequest, NextResponse } from 'next/server';
+
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const id: string | null = searchParams.get('id');
+
+  if (!id) {
+    return NextResponse.json(
+      { message: 'Tournament ID not present' },
+      { status: 404 },
+    );
+  }
+
+  const { data, error, status } = await supabaseService
+    .from('tournaments')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+  if (error) {
+    return NextResponse.json({ message: error.message }, { status });
+  }
+
+  const tournament = data;
+  if (tournament.recurrences) {
+    tournament.recurrences = map(tournament.recurrences, (recurrence) =>
+      JSON.parse(recurrence),
+    );
+  }
+
+  return NextResponse.json(data);
+}
 
 export async function POST(request: NextRequest) {
   const receivedData = await request.json();
@@ -11,15 +43,9 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const tournamentData = {
-    participants: receivedData.initialParticipants,
-    ...receivedData,
-    initialParticipants: undefined,
-  };
-
   const { data, error, status } = await supabaseService
     .from('tournaments')
-    .insert(tournamentData)
+    .insert(receivedData)
     .select('id')
     .single();
 
@@ -41,9 +67,7 @@ export async function PATCH(request: NextRequest) {
   }
 
   const tournamentData = {
-    participants: receivedData.initialParticipants,
     ...receivedData,
-    initialParticipants: undefined,
     id: undefined,
   };
 

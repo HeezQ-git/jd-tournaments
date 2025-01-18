@@ -19,7 +19,8 @@ const ROUTES = {
     TOURNAMENT: {
       SELF: '/tournament',
       LIST: '/tournament/list',
-      CREATE: '/tournament/create',
+      CREATE: '/tournament/manage',
+      CREATED: '/tournament/created',
     },
   },
   GUEST: {

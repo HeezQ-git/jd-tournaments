@@ -1,6 +1,6 @@
 'use client';
 
-import NewHeader from '@/components/common/Header/NewHeader';
+import Header from '@/components/common/Header/Header';
 import Navbar from '@/components/common/Navbar/Navbar';
 import { useGlobalStore } from '@/stores/globalStore';
 import { AppShell } from '@mantine/core';
@@ -34,12 +34,7 @@ const LayoutShell = ({
         },
       }}
     >
-      <NewHeader
-      // lng={lng}
-      // initialIsVerified={isVerified}
-      // initialMetadata={metadata}
-      // initialPermissions={permissions}
-      />
+      <Header />
       <Navbar
         lng={lng}
         metadata={metadata}

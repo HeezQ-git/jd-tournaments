@@ -1,0 +1,45 @@
+.tournament {
+  border: 1px solid
+    light-dark(var(--mantine-color-gray-4), var(--mantine-color-dark-5));
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-0),
+      darken(var(--mantine-color-dark-7), 0.05)
+    );
+  }
+
+  &:focus-visible {
+    border: 1px solid var(--mantine-color-teal-6);
+  }
+
+  .date {
+    user-select: none;
+  }
+
+  .button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .menuControl {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 0;
+    border-left: 1px solid var(--mantine-color-body);
+  }
+}
+
+.imageBox,
+.recurrence {
+  position: relative;
+
+  .badge {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    box-shadow: var(--mantine-shadow-md);
+  }
+}

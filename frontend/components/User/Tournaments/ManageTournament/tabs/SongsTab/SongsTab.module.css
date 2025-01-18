@@ -1,0 +1,13 @@
+.songCard {
+  transition: border-color 100ms ease;
+  justify-self: center;
+  background-color: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-6)
+  );
+  user-select: none;
+
+  &[data-checked='true'] {
+    border-color: alpha(var(--mantine-color-teal-6), light-dark(0.75, 0.55));
+  }
+}

@@ -5,6 +5,9 @@ export const songSchema = z.object({
   release_year: z.number({ message: 'validation.releaseYear.Req' }).positive({
     message: 'validation.releaseYear.Min',
   }),
+  duration: z
+    .string()
+    .regex(/^([0-5]?[0-9]):([0-5]?[0-9])$/, { message: 'validation.duration' }),
 
   tags: z.array(z.string()).optional(),
   image_path: z.any().optional(),

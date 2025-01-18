@@ -12,7 +12,7 @@ export const hasPermission = async (permission: string) => {
 
   if (!userId)
     return {
-      error: "common:errors.permission.userNotFound",
+      error: 'common:errors.permission.userNotFound',
       allowAction: false,
     };
 
@@ -20,7 +20,7 @@ export const hasPermission = async (permission: string) => {
 
   if (error)
     return {
-      error: "common:errors.permission.permsNotFound",
+      error: 'common:errors.permission.permsNotFound',
       allowAction: false,
     };
 

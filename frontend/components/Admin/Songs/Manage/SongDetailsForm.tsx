@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import {
   Box,
   Checkbox,
@@ -14,6 +14,7 @@ import { useMediaQuery } from '@mantine/hooks';
 import { theme } from '@/components/common/Providers/MantineWrapper/MantineWrapper';
 import { values } from 'lodash';
 
+import useDeepMemo from '@/hooks/useDeepMemo';
 import MultiSelect from './components/MultiSelect';
 import CreatableSelect from './components/CreatableSelect';
 import { useSongFormContext } from './lib/formContext';
@@ -49,7 +50,7 @@ const SongDetailsForm: React.FC<SongDetailsFormProps> = ({
     exclusivity: exclusivities,
   } = miscData || {};
 
-  const TitleInput = useMemo(
+  const TitleInput = useDeepMemo(
     () => (
       <TextInput
         label={t('song.title')}
@@ -60,7 +61,7 @@ const SongDetailsForm: React.FC<SongDetailsFormProps> = ({
     [form.values.title, form.errors.title],
   );
 
-  const ArtistsSelect = useMemo(
+  const ArtistsSelect = useDeepMemo(
     () => (
       <Box mt="xs">
         <MultiSelect
@@ -76,7 +77,7 @@ const SongDetailsForm: React.FC<SongDetailsFormProps> = ({
     [artists, loading, form.values.artists, form.errors.artists],
   );
 
-  const GameSelect = useMemo(
+  const GameSelect = useDeepMemo(
     () => (
       <CreatableSelect
         name="game"
@@ -90,7 +91,7 @@ const SongDetailsForm: React.FC<SongDetailsFormProps> = ({
     [games, loading],
   );
 
-  const ExclusivitySelect = useMemo(
+  const ExclusivitySelect = useDeepMemo(
     () => (
       <CreatableSelect
         data={exclusivities}
@@ -103,7 +104,7 @@ const SongDetailsForm: React.FC<SongDetailsFormProps> = ({
     [exclusivities, loading, form.values.exclusivity],
   );
 
-  const VersionSelect = useMemo(
+  const VersionSelect = useDeepMemo(
     () => (
       <CreatableSelect
         data={versions}
@@ -116,18 +117,32 @@ const SongDetailsForm: React.FC<SongDetailsFormProps> = ({
     [versions, loading, form.values.version],
   );
 
-  const ReleaseYearInput = useMemo(
+  const ReleaseYearInput = useDeepMemo(
     () => (
       <NumberInput
         label={t('song.releaseYear')}
         {...form.getInputProps('release_year')}
         error={t(`${form.errors?.release_year ?? ''}`)}
+        w="100%"
       />
     ),
     [form.values.release_year, form.errors.release_year],
   );
 
-  const SelectElements = useMemo(
+  const DurationInput = useDeepMemo(
+    () => (
+      <TextInput
+        label={t('song.duration')}
+        {...form.getInputProps('duration')}
+        error={t(`${form.errors?.duration ?? ''}`)}
+        w="100%"
+        placeholder="e.g. 3:25 (MIN:SEC)"
+      />
+    ),
+    [form.values.duration, form.errors.duration],
+  );
+
+  const SelectElements = useDeepMemo(
     () => (
       <SimpleGrid w="100%" cols={3}>
         <SelectElement data={values(Mode)} name="mode" t={t} />
@@ -138,7 +153,7 @@ const SongDetailsForm: React.FC<SongDetailsFormProps> = ({
     [form.values.mode, form.values.difficulty, form.values.effort],
   );
 
-  const TagsSelect = useMemo(
+  const TagsSelect = useDeepMemo(
     () => (
       <MultiSelect
         data={tags}
@@ -151,7 +166,7 @@ const SongDetailsForm: React.FC<SongDetailsFormProps> = ({
     [tags, loading, form.values.tags],
   );
 
-  const Checkboxes = useMemo(
+  const Checkboxes = useDeepMemo(
     () => (
       <Flex gap="xl" w="100%" wrap="wrap" mt="md">
         <Checkbox
@@ -173,7 +188,14 @@ const SongDetailsForm: React.FC<SongDetailsFormProps> = ({
     <Stack gap="sm">
       {TitleInput}
       {ArtistsSelect}
-      {ReleaseYearInput}
+      <Group
+        w="100%"
+        gap={isMobile ? 'xs' : 'md'}
+        wrap={isMobile ? 'wrap' : 'nowrap'}
+      >
+        {ReleaseYearInput}
+        {DurationInput}
+      </Group>
       {SelectElements}
       {GameSelect}
       <Group

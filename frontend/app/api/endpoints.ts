@@ -80,6 +80,11 @@ export const usersEndpoints = {
     key: 'deleteUser',
     route: '/api/user/[id]',
   },
+  getTournaments: {
+    method: HTTPMethods.GET,
+    key: 'userTournaments',
+    route: '/api/user/tournaments',
+  },
 };
 
 export const verificationEndpoints = {
@@ -114,6 +119,11 @@ export const tournamentsEndpoints = {
     key: 'tournamentsUsers',
     route: '/api/tournaments/users',
   },
+  getById: {
+    method: HTTPMethods.GET,
+    key: 'tournamentById',
+    route: `/api/tournaments`,
+  },
   create: {
     method: HTTPMethods.POST,
     key: 'create',
@@ -123,5 +133,10 @@ export const tournamentsEndpoints = {
     method: HTTPMethods.PATCH,
     key: 'save',
     route: '/api/tournaments',
+  },
+  setPublish: {
+    method: HTTPMethods.POST,
+    key: 'publish',
+    route: '/api/tournaments/publish',
   },
 };

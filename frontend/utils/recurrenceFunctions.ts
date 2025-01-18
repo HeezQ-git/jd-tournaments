@@ -76,6 +76,7 @@ export const getNextRecurrenceDates = (
           !dateSet.has(dateStr)
         ) {
           const formattedDate = formatWithTime(nextDate, time);
+
           if (formattedDate.isValid()) {
             dates.push(formattedDate);
             dateSet.add(formattedDate.format('YYYY-MM-DD HH:mm'));
@@ -85,6 +86,7 @@ export const getNextRecurrenceDates = (
     } else if (isNotExcludedDay(currentDate, excludedDays)) {
       const formattedDate = formatWithTime(currentDate, time);
       const dateStr = formattedDate.format('YYYY-MM-DD HH:mm');
+
       if (formattedDate.isValid() && !dateSet.has(dateStr)) {
         dates.push(formattedDate);
         dateSet.add(dateStr);
@@ -99,6 +101,59 @@ export const getNextRecurrenceDates = (
   return dates
     .sort((a, b) => a.valueOf() - b.valueOf())
     .slice(0, amountOfDates);
+};
+
+export const getNextMultipleRecurrenceDates = (
+  recurrences: TournamentRecurrence[],
+  amountOfDates: number
+): dayjs.Dayjs[] => {
+  if (!Array.isArray(recurrences) || recurrences.length === 0) {
+    throw new Error('You must provide a non-empty array of recurrences.');
+  }
+  if (!Number.isInteger(amountOfDates) || amountOfDates <= 0) {
+    throw new Error(`Invalid amountOfDates: ${amountOfDates}. Must be a positive integer.`);
+  }
+
+  let allDates: dayjs.Dayjs[] = [];
+
+  // Generate dates for each recurrence individually and combine them
+  recurrences.forEach((recurrence) => {
+    try {
+      const generated = getNextRecurrenceDates(
+        // We temporarily generate more than 'amountOfDates' for each recurrence
+        // because some recurrences might overlap or have excluded days.
+        // You can adjust this multiplier as needed.
+        amountOfDates * 3,
+        recurrence.interval,
+        recurrence.unit,
+        recurrence.daysOfWeek,
+        recurrence.excludedDays,
+        recurrence.time
+      );
+
+      allDates = allDates.concat(generated);
+    } catch (error) {
+      // Log or handle errors per recurrence if needed
+      console.error(`Error generating dates for recurrence ID ${recurrence.id}:`, error);
+    }
+  });
+
+  // Sort by date ascending
+  allDates.sort((a, b) => a.valueOf() - b.valueOf());
+
+  // Deduplicate by date string (YYYY-MM-DD HH:mm)
+  const uniqueDates: dayjs.Dayjs[] = [];
+  const seen = new Set<string>();
+  for (const date of allDates) {
+    const dateStr = date.format('YYYY-MM-DD HH:mm');
+    if (!seen.has(dateStr)) {
+      seen.add(dateStr);
+      uniqueDates.push(date);
+    }
+  }
+
+  // Return only the next 'amountOfDates' dates
+  return uniqueDates.slice(0, amountOfDates);
 };
 
 /**

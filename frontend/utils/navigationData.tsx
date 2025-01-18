@@ -12,6 +12,7 @@ import {
   TbPlus,
   TbRosetteDiscountCheck,
   TbSwords,
+  TbUserPlus,
   TbUsers,
 } from 'react-icons/tb';
 import { checkPermission } from './permissionHandler/checkPermission';
@@ -58,6 +59,12 @@ export const navigationData = (
           label: t('header.tournament.create'),
           icon: <TbPlus />,
           href: ROUTES.USER.TOURNAMENT.CREATE,
+        },
+        {
+          type: 'link',
+          label: t('header.tournament.created'),
+          icon: <TbUserPlus />,
+          href: ROUTES.USER.TOURNAMENT.CREATED,
         },
       ],
     },

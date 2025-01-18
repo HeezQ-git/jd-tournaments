@@ -1,3 +1,6 @@
+import { Tournament } from '@/types/tournaments';
+import dayjs from 'dayjs';
+
 export const formatToPostgresArray = (array: string[]) =>
   `{${array.join(',')}}`;
 
@@ -54,4 +57,42 @@ export const setParams = (url: string, data: Record<string, any>): string =>
 export const getRandomElements = <T>(array: T[], count?: number) => {
   const shuffled = array.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
+};
+
+export const generateUUID = () => {
+  let timestamp = new Date().getTime();
+
+  if (
+    typeof performance !== 'undefined' &&
+    typeof performance.now === 'function'
+  ) {
+    timestamp += performance.now();
+  }
+
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (char) => {
+    // eslint-disable-next-line no-bitwise
+    const randomNibble = (timestamp + Math.random() * 16) % 16 | 0;
+    timestamp = Math.floor(timestamp / 16);
+
+    // eslint-disable-next-line no-bitwise
+    const value = char === 'x' ? randomNibble : (randomNibble & 0x3) | 0x8;
+
+    return value.toString(16);
+  });
+};
+
+export const getTournamentDuration = (duration: number) => {
+  if (!duration) return '00:00:00';
+
+  let hours: string | number = Math.floor((duration || 0) / 3600);
+  hours = hours < 10 ? `0${hours}` : hours;
+
+  let minutes: string | number = Math.floor((duration || 0) / 60);
+  minutes %= 60;
+  minutes = minutes < 10 ? `0${minutes}` : minutes;
+
+  let seconds: string | number = (duration || 0) % 60;
+  seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+  return `${hours}:${minutes}:${seconds}`;
 };
